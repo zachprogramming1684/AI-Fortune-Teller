@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import javax.annotation.processing.Generated;
+import java.time.LocalDate;
 
 @Entity
 public class Fortune
@@ -14,6 +15,8 @@ public class Fortune
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String fortuneText;
+    private LocalDate dateGenerated;
+
     public Fortune()
     {}
 
