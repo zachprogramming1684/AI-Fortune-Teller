@@ -1,0 +1,6 @@
+Functionality:
+- Create a new Fortune
+    - FortuneGenerator service class will have a method to take in parameters for a fortune.
+      It will call an in house ai model to generate the text for the fortune, the parameters and text
+      will then be passed into a FortuneDTO and exposed by the controller.
+- Create a new User

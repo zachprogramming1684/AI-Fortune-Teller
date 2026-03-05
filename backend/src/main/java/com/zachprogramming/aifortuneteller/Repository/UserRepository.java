@@ -1,6 +1,6 @@
 package com.zachprogramming.aifortuneteller.Repository;
 
-import com.zachprogramming.aifortuneteller.Models.User;
+import com.zachprogramming.aifortuneteller.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

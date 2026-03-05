@@ -1,6 +1,6 @@
-package com.zachprogramming.aifortuneteller.Services;
+package com.zachprogramming.aifortuneteller.Service;
 
-import com.zachprogramming.aifortuneteller.Models.User;
+import com.zachprogramming.aifortuneteller.Model.User;
 import com.zachprogramming.aifortuneteller.Repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

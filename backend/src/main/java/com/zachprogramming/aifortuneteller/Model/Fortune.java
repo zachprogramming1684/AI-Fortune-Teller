@@ -1,8 +1,7 @@
-package com.zachprogramming.aifortuneteller.Models;
+package com.zachprogramming.aifortuneteller.Model;
 
 import jakarta.persistence.*;
 
-import javax.annotation.processing.Generated;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

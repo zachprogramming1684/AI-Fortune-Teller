@@ -1,4 +1,4 @@
-package com.zachprogramming.aifortuneteller.Models;
+package com.zachprogramming.aifortuneteller.Model;
 
 import jakarta.persistence.*;
 
