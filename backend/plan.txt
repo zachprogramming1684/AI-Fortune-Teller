@@ -4,3 +4,6 @@ Functionality:
       It will call an in house ai model to generate the text for the fortune, the parameters and text
       will then be passed into a FortuneDTO and exposed by the controller.
 - Create a new User
+- SAVE a Fortune to a user
+    - Database holds a Fortune table and a User table
+    - Each fortune will be linked to a user id
