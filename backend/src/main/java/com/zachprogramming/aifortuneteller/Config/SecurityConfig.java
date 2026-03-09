@@ -21,8 +21,10 @@ public class SecurityConfig
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/register", "/login").permitAll() // public pages for people to use to log in
+                        .requestMatchers("/users/register", "/login", "/fortunes/all", "/swagger-ui/index.html").permitAll() // public pages for people to use to log in
                         .anyRequest().authenticated()
+                        // .anyRequest().permitAll()
+                        //TODO: Security needs to be fixed and aligned with registering as a new user
                 )
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults());
