@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long>
 {
-    Optional<User> findByUsername(String username);
+    Optional<User> findByUsername(String username); // gives a way to search by username when making for fetching fortunes for a user
 }
