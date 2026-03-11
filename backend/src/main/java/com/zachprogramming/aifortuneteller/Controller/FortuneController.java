@@ -25,4 +25,6 @@ public class FortuneController
     {
         return ResponseEntity.ok(fortuneService.getAllFortunes());
     }
+
+
 }

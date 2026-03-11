@@ -3,6 +3,9 @@ package com.zachprogramming.aifortuneteller.Service;
 import com.zachprogramming.aifortuneteller.Model.Fortune;
 import com.zachprogramming.aifortuneteller.Model.User;
 import com.zachprogramming.aifortuneteller.Repository.FortuneRepository;
+import com.zachprogramming.aifortuneteller.Repository.UserRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,10 +14,11 @@ import java.util.List;
 public class FortuneService
 {
     private FortuneRepository fortuneRepository;
-
-    public FortuneService(FortuneRepository fortuneRepository)
+    private UserRepository userRepository;
+    public FortuneService(FortuneRepository fortuneRepository,  UserRepository userRepository)
     {
         this.fortuneRepository = fortuneRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Fortune> getAllFortunes() {return fortuneRepository.findAll();}
@@ -26,6 +30,11 @@ public class FortuneService
      */
     public List<Fortune> fetchFortunesForUser(User user)
     {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currUsername = authentication.getName();
+        User currentUser = userRepository.findByUsername(currUsername)
+                .orElseThrow(() -> new RuntimeException("User not found in database"));
+        //TODO: now that we have the current user, find a way to ping the db and fetch all fortunes for the current user
         return null;
     }
 

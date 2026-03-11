@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -35,10 +36,12 @@ public class FortuneGenerator
                 .orElseThrow(() -> new RuntimeException("User not found in database"));
         Fortune newFortune = new Fortune();
         newFortune.setUser(currentUser);
+        newFortune.setAttributes(attributes);
 
-        // logic with the ai and attributes
-        //TODO: once ai service works, finish fortune generation logic here and in the controller THEN figure out new users and logging in
+        // TODO: need to figure out how I am going to pass in attributes when making a fortune
 
+        newFortune.setFortuneText(aiService.generateFortuneText(attributes));
+        newFortune.setDateGenerated(LocalDateTime.now());
         return fortuneRepository.save(newFortune);
     }
 
